@@ -1,0 +1,299 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f0f0;
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+header {
+  background: #d32f2f; /* Rojo LEGO */
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* permite que el contenido baje en pantallas pequeñas */
+}
+
+/* Logo estilo bloque LEGO */
+.lego-logo {
+  width: 60px;
+  height: 60px;
+  background: #f9a825; /* Amarillo LEGO */
+  border-radius: 8px;
+  box-shadow: inset 0 5px 0 #e6b422, 0 4px 8px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* Los "botones" del bloque */
+.lego-logo::before,
+.lego-logo::after {
+  content: '';
+  position: absolute;
+  background: #fbc02d;
+  border-radius: 50%;
+  box-shadow: inset 0 3px 0 #e6b422;
+}
+
+.lego-logo::before {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: 10px;
+}
+
+.lego-logo::after {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  right: 10px;
+}
+
+/* Texto del header */
+.lego-title {
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 4px #b71c1c;
+  flex: 1 1 auto;
+  min-width: 180px;
+}
+
+/* Menú simple estilo LEGO */
+nav {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  background: #1976d2;
+  padding: 10px 18px;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 #1565c0;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #1565c0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+  
+  .lego-title {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  nav {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .lego-logo {
+    order: 1;
+  }
+  
+  nav a {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    padding: 15px 20px;
+  }
+  
+  .lego-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .lego-logo::before,
+  .lego-logo::after {
+    width: 16px;
+    height: 16px;
+    top: -8px;
+  }
+  
+  .lego-title {
+    font-size: 1.5rem;
+  }
+  
+  nav a {
+    padding: 7px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ----------------------------------------------------------footer----------------------------------------------------*/
+
+footer {
+  background: #1976d2; /* Azul LEGO */
+  color: white;
+  padding: 30px 40px 20px;
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.lego-footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lego-footer-block {
+  background: #f9a825; /* Amarillo LEGO */
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  box-shadow: inset 0 4px 0 #e6b422, 0 3px 8px rgba(0,0,0,0.2);
+  color: #333;
+}
+
+.lego-footer-block h3 {
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b71c1c; /* Rojo LEGO */
+  text-shadow: 1px 1px 1px #eee;
+}
+
+.lego-footer-block p,
+.lego-footer-block a {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.lego-footer-block a:hover {
+  color: #d32f2f;
+  text-decoration: underline;
+}
+
+.lego-footer-bottom {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: 1px 1px 3px #1565c0;
+}
+
+/* Responsive Footer */
+
+@media (max-width: 768px) {
+  .lego-footer-container {
+    flex-direction: column;
+  }
+  
+  .lego-footer-block {
+    flex: 1 1 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* --------------------------------------------------banner---------------------------------------- */
+
+.lego-banner {
+  background: #f0f0f0;
+  padding: 40px 20px;
+   width: 100%;
+    height: auto;
+}
+
+.lego-banner-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+    height: auto;
+}
+
+.lego-banner-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow:
+    0 6px 0 #e6b422,   /* sombra LEGO amarilla */
+    inset 0 -6px 0 #b71c1c; /* sombra interior roja */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+   
+
+}
+
+.lego-banner-container img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 10px 0 #fbc02d,
+    inset 0 -10px 0 #d32f2f;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .lego-banner-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .lego-banner-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* --------------------------------------------------------slider ------------------------------- */
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+   
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*----------------------agrandar imagen con clip-------------------*/
+ iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
